@@ -70,6 +70,7 @@ let g:tex_flavor = "latex"
 
 " misc
 set grepprg=grep\ -nH\ $*
+set wildmode=longest,list  " bash-like tab completion
 set wildmenu
 set backspace=2
 set mouse=c
