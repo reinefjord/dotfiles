@@ -30,7 +30,7 @@ call plug#end()
 " key bindings
 let mapleader = ' '
 tnoremap <Leader>e <C-\><C-n>
-nnoremap <Leader>h :nohlsearch<Bar>:echo<CR>
+nnoremap <Leader>h :set hlsearch!<CR>
 nmap <Leader>o o<Esc>k
 nmap <Leader>O O<Esc>j
 nmap <Leader>n :NeomakeDisableBuffer<Bar>:NeomakeClean<CR>
