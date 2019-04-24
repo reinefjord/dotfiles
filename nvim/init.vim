@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Colorschemes
 Plug 'w0ng/vim-hybrid'
 Plug 'nanotech/jellybeans.vim'
+"Plug 'rafi/awesome-vim-colorschemes'
 
 " Languages
 Plug 'sheerun/vim-polyglot'
@@ -16,8 +17,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'neomake/neomake'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'unblevable/quick-scope'
+"Plug 'unblevable/quick-scope'
 Plug 'godlygeek/tabular'
+Plug 'justinmk/vim-sneak'
 
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'davidhalter/jedi'
@@ -31,16 +33,21 @@ call plug#end()
 let mapleader = ' '
 tnoremap <Leader>e <C-\><C-n>
 nnoremap <Leader>h :set hlsearch!<CR>
+nnoremap <Leader>r :set relativenumber!<CR>
+nnoremap <tab> :bn<CR>
+nnoremap <S-tab> :bp<CR>
 nmap <Leader>o o<Esc>k
 nmap <Leader>O O<Esc>j
 nmap <Leader>n :NeomakeDisableBuffer<Bar>:NeomakeClean<CR>
 nmap <Leader>N :NeomakeEnableBuffer<Bar>:Neomake<CR>
+nmap <Leader>W :%s/\s\+$\<Bar> \+\ze\t//g<CR>
 
 " visuals
 set relativenumber
 set number
 set ruler
 set list listchars=tab:>·,nbsp:␣,trail:•
+set cursorline
 
 " color
 syntax on
