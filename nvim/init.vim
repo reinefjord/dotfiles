@@ -3,7 +3,6 @@ call plug#begin('~/.config/nvim/plugged')
 " Colorschemes
 Plug 'w0ng/vim-hybrid'
 Plug 'nanotech/jellybeans.vim'
-"Plug 'rafi/awesome-vim-colorschemes'
 
 " Languages
 Plug 'sheerun/vim-polyglot'
@@ -17,14 +16,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'neomake/neomake'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-"Plug 'unblevable/quick-scope'
 Plug 'godlygeek/tabular'
 Plug 'justinmk/vim-sneak'
 
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'davidhalter/jedi'
-"Plug 'zchee/deoplete-jedi'
 "Plug 'w0rp/ale'
+
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
@@ -61,8 +58,8 @@ endif
 colorscheme jellybeans
 
 set background=dark
-"set colorcolumn=80
-"hi ColorColumn ctermbg=8
+set colorcolumn=80
+hi ColorColumn ctermbg=235
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\| \+\ze\t/
 
