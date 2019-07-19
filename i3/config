@@ -166,6 +166,10 @@ bindsym $mod+r mode "resize"
 
 focus_follows_mouse no
 
+# Disable switching windows with scroll
+bindsym button4 nop
+bindsym button5 nop
+
 bindsym XF86AudioLowerVolume exec pamixer -d 5
 bindsym $mod+Next exec pamixer -d 5
 
@@ -189,7 +193,7 @@ bar {
 }
 
 ## Screen locking and system management
-set $Locker i3lock && sleep 1
+set $Locker lock-screen && sleep 1
 
 set $mode_system System: (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {

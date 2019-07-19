@@ -22,6 +22,7 @@ Plug 'justinmk/vim-sneak'
 "Plug 'w0rp/ale'
 
 Plug 'vimwiki/vimwiki'
+Plug 'farmergreg/vim-lastplace'
 
 call plug#end()
 
@@ -43,7 +44,7 @@ nmap <Leader>W :%s/\s\+$\<Bar> \+\ze\t//g<CR>
 set relativenumber
 set number
 set ruler
-set list listchars=tab:>·,nbsp:␣,trail:•
+set list listchars=tab:>·,nbsp:⍽,trail:•
 set cursorline
 
 " color
