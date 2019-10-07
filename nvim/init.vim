@@ -12,15 +12,13 @@ Plug 'lervag/vimtex'
 Plug 'chrisbra/csv.vim'
 Plug 'Vimjas/vim-python-pep8-indent'
 
-Plug 'tpope/vim-fugitive'
-Plug 'neomake/neomake'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'godlygeek/tabular'
+" Motions
 Plug 'justinmk/vim-sneak'
 
-"Plug 'w0rp/ale'
+" Make/linting
+Plug 'neomake/neomake'
 
+" Other
 Plug 'vimwiki/vimwiki'
 Plug 'farmergreg/vim-lastplace'
 
