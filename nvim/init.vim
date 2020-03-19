@@ -10,7 +10,6 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'lervag/vimtex'
 Plug 'chrisbra/csv.vim'
-Plug 'Vimjas/vim-python-pep8-indent'
 
 " Motions
 Plug 'justinmk/vim-sneak'
@@ -19,8 +18,9 @@ Plug 'justinmk/vim-sneak'
 Plug 'neomake/neomake'
 
 " Other
-Plug 'vimwiki/vimwiki'
 Plug 'farmergreg/vim-lastplace'
+Plug 'norcalli/nvim-colorizer.lua'
+"Plug 'tpope/vim-sleuth'
 
 call plug#end()
 
@@ -47,26 +47,20 @@ set cursorline
 
 " color
 syntax on
-
-let g:jellybeans_overrides = {
-\    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
-\}
-if has('termguicolors') && &termguicolors
-    let g:jellybeans_overrides['background']['guibg'] = 'none'
-endif
 colorscheme jellybeans
-
 set background=dark
 set colorcolumn=80
 hi ColorColumn ctermbg=235
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\| \+\ze\t/
+set termguicolors
 
 " tabs
 set breakindent "indent wrapped lines to line indent level
 set tabstop=4
 set shiftwidth=4
 set expandtab
+let g:python_recommended_style = 0
 
 " tex
 let g:tex_flavor = "latex"
@@ -88,6 +82,7 @@ set smartcase
 
 " neomake
 call neomake#configure#automake('nrw', 500)
+let g:neomake_python_python_exe = 'python3'
 
 " deoplete
 "let g:deoplete#enable_at_startup = 1
@@ -95,6 +90,7 @@ call neomake#configure#automake('nrw', 500)
 " vim-markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_new_list_item_indent = 2
+let g:vim_markdown_conceal_code_blocks = 0
 
 " vim-polyglot
-let g:polyglot_disabled = ['latex', 'markdown']
+let g:polyglot_disabled = ['latex', 'python']

@@ -31,7 +31,7 @@ font pango:Fira Mono Regular 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal #i3-sensible-terminal
+bindsym $mod+Return exec gnome-terminal #xfce4-terminal #i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -282,8 +282,8 @@ mode "$mode_display" {
 # Declare here the shortcut to bring the display selection menu
 bindsym $mod+x mode "$mode_display"
 
-exec --no-startup-id compton -b
-exec --no-startup-id feh --bg-fill ~/Pictures/solarenergy.jpg
+exec --no-startup-id picom -b
+exec --no-startup-id feh --bg-fill ~/Pictures/simpleOutlook-ridge-x1440.png
 exec --no-startup-id setxkbmap -layout us -variant altgr-intl
 exec --no-startup-id xrandr --output eDP-1 --brightness .9
-exec --no-startup-id xss-lock -- i3lock -c 333333 --ignore-empty-password &
+exec --no-startup-id xss-lock -- ~/bin/lock-screen &
