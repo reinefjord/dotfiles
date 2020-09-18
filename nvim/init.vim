@@ -3,6 +3,8 @@ call plug#begin('~/.config/nvim/plugged')
 " Colorschemes
 Plug 'w0ng/vim-hybrid'
 Plug 'nanotech/jellybeans.vim'
+Plug 'gruvbox-community/gruvbox'
+Plug 'arzg/vim-corvine'
 
 " Languages
 Plug 'sheerun/vim-polyglot'
@@ -20,7 +22,7 @@ Plug 'neomake/neomake'
 " Other
 Plug 'farmergreg/vim-lastplace'
 Plug 'norcalli/nvim-colorizer.lua'
-"Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-sleuth'
 
 call plug#end()
 
@@ -44,16 +46,20 @@ set number
 set ruler
 set list listchars=tab:>·,nbsp:⍽,trail:•
 set cursorline
+set scrolloff=1  " show at least one line above/below cursor
+
+" gruvbox
+let g:gruvbox_contrast_light='hard'
 
 " color
 syntax on
-colorscheme jellybeans
-set background=dark
 set colorcolumn=80
 hi ColorColumn ctermbg=235
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\| \+\ze\t/
 set termguicolors
+set background=light
+colorscheme corvine_light
 
 " tabs
 set breakindent "indent wrapped lines to line indent level
@@ -82,7 +88,7 @@ set smartcase
 
 " neomake
 call neomake#configure#automake('nrw', 500)
-let g:neomake_python_python_exe = 'python3'
+"let g:neomake_python_python_exe = 'python3'
 
 " deoplete
 "let g:deoplete#enable_at_startup = 1
