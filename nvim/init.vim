@@ -1,3 +1,22 @@
+" Plugin configuration before loading
+"let g:neomake_python_python_exe = 'python3'
+
+" deoplete
+"let g:deoplete#enable_at_startup = 1
+
+" vim-markdown
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_new_list_item_indent = 2
+let g:vim_markdown_conceal_code_blocks = 0
+
+" vim-polyglot
+let g:polyglot_disabled = ['latex', 'python']
+
+" gruvbox
+let g:gruvbox_contrast_light='hard'
+
+
+" Load plugins
 call plug#begin('~/.config/nvim/plugged')
 
 " Colorschemes
@@ -26,6 +45,9 @@ Plug 'tpope/vim-sleuth'
 
 call plug#end()
 
+" neomake
+"call neomake#configure#automake('nrw', 500)
+
 
 " key bindings
 let mapleader = ' '
@@ -47,9 +69,6 @@ set ruler
 set list listchars=tab:>·,nbsp:⍽,trail:•
 set cursorline
 set scrolloff=1  " show at least one line above/below cursor
-
-" gruvbox
-let g:gruvbox_contrast_light='hard'
 
 " color
 syntax on
@@ -85,18 +104,3 @@ set nojoinspaces  " only one space after punctuation
 set conceallevel=2  " conceal *text* _formatting_
 set ignorecase
 set smartcase
-
-" neomake
-call neomake#configure#automake('nrw', 500)
-"let g:neomake_python_python_exe = 'python3'
-
-" deoplete
-"let g:deoplete#enable_at_startup = 1
-
-" vim-markdown
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_new_list_item_indent = 2
-let g:vim_markdown_conceal_code_blocks = 0
-
-" vim-polyglot
-let g:polyglot_disabled = ['latex', 'python']
