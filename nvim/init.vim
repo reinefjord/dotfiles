@@ -1,5 +1,5 @@
 " Plugin configuration before loading
-"let g:neomake_python_python_exe = 'python3'
+let g:neomake_python_python_exe = 'python3'
 
 " deoplete
 "let g:deoplete#enable_at_startup = 1
@@ -10,7 +10,7 @@ let g:vim_markdown_new_list_item_indent = 2
 let g:vim_markdown_conceal_code_blocks = 0
 
 " vim-polyglot
-let g:polyglot_disabled = ['latex', 'python']
+let g:polyglot_disabled = ['latex', 'autoindent']
 
 " gruvbox
 let g:gruvbox_contrast_light='hard'
@@ -46,7 +46,7 @@ Plug 'tpope/vim-sleuth'
 call plug#end()
 
 " neomake
-"call neomake#configure#automake('nrw', 500)
+call neomake#configure#automake('nrw', 500)
 
 
 " key bindings
