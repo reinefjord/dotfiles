@@ -1,0 +1,37 @@
+#!/bin/sh
+
+xfce_conf=~/.config/xfce4/terminal/terminalrc
+#xfce_colors_day=~/.config/xfce4/terminal/baskervilleivorylight.terminalrc
+xfce_colors_day=~/.config/xfce4/terminal/gruvbox.terminalrc
+xfce_colors_night=~/.config/xfce4/terminal/tango.terminalrc
+
+nvim_conf=~/.config/nvim/init.vim
+nvim_colorscheme_day="gruvbox"
+nvim_colorscheme_night="jellybeans"
+
+if [ "$1" = "day" ]
+then
+  xfce_colors=$xfce_colors_day
+  nvim_colorscheme=$nvim_colorscheme_day
+  nvim_background="light"
+elif [ "$1" = "night" ]
+then
+  xfce_colors=$xfce_colors_night
+  nvim_colorscheme=$nvim_colorscheme_night
+  nvim_background="dark"
+else
+  echo "Dont know what $1 is."
+  exit 1
+fi
+
+while read line
+do
+  key=$(echo $line | cut -d'=' -f1)
+  sed -i "/^$key/d" $xfce_conf
+done < $xfce_colors
+
+cat $xfce_colors >> $xfce_conf
+
+sed -i "s/^set background.*/set background=$nvim_background/" $nvim_conf
+sed -i "s/^colorscheme.*/colorscheme $nvim_colorscheme/" $nvim_conf
+neovim-reload
