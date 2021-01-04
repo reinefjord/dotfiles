@@ -78,7 +78,7 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\| \+\ze\t/
 set termguicolors
 set background=light
-colorscheme corvine_light
+colorscheme gruvbox
 
 " tabs
 set breakindent "indent wrapped lines to line indent level
