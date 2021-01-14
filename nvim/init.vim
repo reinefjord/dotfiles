@@ -14,7 +14,7 @@ let g:polyglot_disabled = ['latex', 'autoindent']
 
 " gruvbox
 let g:gruvbox_contrast_light='hard'
-
+let g:gruvbox_italic=1
 
 " Load plugins
 call plug#begin('~/.config/nvim/plugged')
@@ -73,9 +73,6 @@ set scrolloff=1  " show at least one line above/below cursor
 " color
 syntax on
 set colorcolumn=80
-hi ColorColumn ctermbg=235
-highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-match ExtraWhitespace /\s\+$\| \+\ze\t/
 set termguicolors
 set background=light
 colorscheme gruvbox
