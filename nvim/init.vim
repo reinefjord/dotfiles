@@ -24,6 +24,7 @@ Plug 'w0ng/vim-hybrid'
 Plug 'nanotech/jellybeans.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'arzg/vim-corvine'
+Plug 'owickstrom/vim-colors-paramount'
 
 " Languages
 Plug 'sheerun/vim-polyglot'
@@ -62,6 +63,14 @@ nmap <Leader>n :NeomakeDisableBuffer<Bar>:NeomakeClean<CR>
 nmap <Leader>N :NeomakeEnableBuffer<Bar>:Neomake<CR>
 nmap <Leader>W :%s/\s\+$\<Bar> \+\ze\t//g<CR>
 
+nmap <F2> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
 " visuals
 set relativenumber
 set number
@@ -73,9 +82,9 @@ set scrolloff=1  " show at least one line above/below cursor
 " color
 syntax on
 set colorcolumn=80
-set termguicolors
+"set termguicolors
 set background=light
-colorscheme gruvbox
+colorscheme paramount
 
 " tabs
 set breakindent "indent wrapped lines to line indent level
@@ -101,3 +110,4 @@ set nojoinspaces  " only one space after punctuation
 set conceallevel=2  " conceal *text* _formatting_
 set ignorecase
 set smartcase
+
