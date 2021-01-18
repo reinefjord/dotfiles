@@ -82,9 +82,9 @@ set scrolloff=1  " show at least one line above/below cursor
 " color
 syntax on
 set colorcolumn=80
-"set termguicolors
+set termguicolors
 set background=light
-colorscheme paramount
+colorscheme paper
 
 " tabs
 set breakindent "indent wrapped lines to line indent level
