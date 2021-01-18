@@ -37,9 +37,9 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
     let g:terminal_color_13 = '#5c21a5'
     let g:terminal_color_14 = '#158c86'
     let g:terminal_color_15 = '#aaaaaa'
-  endif     
+  endif
   hi ColorColumn guifg=NONE guibg=#d8d5c7 gui=NONE cterm=NONE
-  hi Comment guifg=#777777 guibg=NONE gui=NONE cterm=NONE
+  hi Comment guifg=#777777 guibg=NONE gui=italic cterm=italic
   hi Conceal guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
   hi Constant guifg=#000000 guibg=NONE gui=NONE cterm=NONE
   hi Cursor guifg=NONE guibg=#d8d5c7 gui=NONE cterm=NONE
