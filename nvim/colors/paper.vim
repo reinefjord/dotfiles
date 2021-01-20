@@ -41,7 +41,7 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   hi ColorColumn guifg=NONE guibg=#d8d5c7 gui=NONE cterm=NONE
   hi Comment guifg=#777777 guibg=NONE gui=italic cterm=italic
   hi Conceal guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-  hi Constant guifg=#000000 guibg=NONE gui=NONE cterm=NONE
+  hi Constant guifg=#5c21a5 guibg=NONE gui=NONE cterm=NONE
   hi Cursor guifg=NONE guibg=#d8d5c7 gui=NONE cterm=NONE
   hi CursorLineNR guifg=#000000 guibg=NONE gui=bold cterm=bold
   hi Directory guifg=#5c21a5 guibg=NONE gui=NONE cterm=NONE
@@ -181,7 +181,7 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   hi! link rustCommentLineDoc Comment
   hi! link rustFuncCall Identifier
   hi! link rustModPath Identifier
-  hi! link pythonOperator Keyword
+  "hi! link pythonOperator Keyword
   hi! link sassClass cssClassName
   hi! link sassId cssIdentifier
   hi! link shFunctionKey Keyword
