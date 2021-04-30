@@ -41,7 +41,6 @@ call neomake#configure#automake('nrw', 500)
 
 " key bindings
 let mapleader = ' '
-tnoremap <Leader>e <C-\><C-n>
 nnoremap <Leader>h :set hlsearch!<CR>
 nnoremap <Leader>r :set relativenumber!<CR>
 nnoremap <tab> :bn<CR>
