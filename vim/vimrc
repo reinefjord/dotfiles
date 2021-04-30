@@ -6,7 +6,7 @@ let g:gruvbox_contrast_light='hard'
 let g:gruvbox_italic=1
 
 " Load plugins
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
 " Colorschemes
 Plug 'w0ng/vim-hybrid'
