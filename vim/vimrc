@@ -1,17 +1,6 @@
 " Plugin configuration before loading
 let g:neomake_python_python_exe = 'python3'
 
-" deoplete
-"let g:deoplete#enable_at_startup = 1
-
-" vim-markdown
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_new_list_item_indent = 2
-let g:vim_markdown_conceal_code_blocks = 0
-
-" vim-polyglot
-let g:polyglot_disabled = ['latex', 'autoindent']
-
 " gruvbox
 let g:gruvbox_contrast_light='hard'
 let g:gruvbox_italic=1
@@ -25,15 +14,16 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'arzg/vim-corvine'
 Plug 'owickstrom/vim-colors-paramount'
+Plug 'YorickPeterse/vim-paper'
 
 " Languages
-Plug 'sheerun/vim-polyglot'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'lervag/vimtex'
-Plug 'chrisbra/csv.vim'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'andys8/vim-elm-syntax'
 
-" Motions
+"" Motions
 Plug 'justinmk/vim-sneak'
 
 " Make/linting
@@ -41,7 +31,6 @@ Plug 'neomake/neomake'
 
 " Other
 Plug 'farmergreg/vim-lastplace'
-Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tpope/vim-sleuth'
 
 call plug#end()
@@ -63,13 +52,15 @@ nmap <Leader>n :NeomakeDisableBuffer<Bar>:NeomakeClean<CR>
 nmap <Leader>N :NeomakeEnableBuffer<Bar>:Neomake<CR>
 nmap <Leader>W :%s/\s\+$\<Bar> \+\ze\t//g<CR>
 
-nmap <F2> :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-    if !exists("*synstack")
-        return
-    endif
-    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
+function! SynStack ()
+    for i1 in synstack(line("."), col("."))
+        let i2 = synIDtrans(i1)
+        let n1 = synIDattr(i1, "name")
+        let n2 = synIDattr(i2, "name")
+        echo n1 "->" n2
+    endfor
+endfunction
+map <F2> :call SynStack()<CR>
 
 " visuals
 set relativenumber
@@ -91,7 +82,6 @@ set breakindent "indent wrapped lines to line indent level
 set tabstop=4
 set shiftwidth=4
 set expandtab
-let g:python_recommended_style = 0
 
 " tex
 let g:tex_flavor = "latex"
@@ -105,9 +95,8 @@ set mouse=c
 au BufRead /tmp/mutt-* set tw=72
 set hidden
 set undofile
-set undodir=$HOME/.local/share/nvim/undo
+set undodir=~/.local/share/vim/undo  " not created automatically!
 set nojoinspaces  " only one space after punctuation
 set conceallevel=2  " conceal *text* _formatting_
 set ignorecase
 set smartcase
-

@@ -182,6 +182,7 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   hi! link rustFuncCall Identifier
   hi! link rustModPath Identifier
   "hi! link pythonOperator Keyword
+  hi! link pythonBuiltinFunc Keyword
   hi! link sassClass cssClassName
   hi! link sassId cssIdentifier
   hi! link shFunctionKey Keyword
@@ -355,7 +356,8 @@ if s:t_Co >= 256
   hi! link rustCommentLineDoc Comment
   hi! link rustFuncCall Identifier
   hi! link rustModPath Identifier
-  hi! link pythonOperator Keyword
+  "hi! link pythonOperator Keyword
+  hi! link pythonBuiltinFunc Keyword
   hi! link sassClass cssClassName
   hi! link sassId cssIdentifier
   hi! link shFunctionKey Keyword

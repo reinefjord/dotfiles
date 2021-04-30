@@ -33,6 +33,7 @@ ScrollingOnOutput=FALSE
 ShortcutsNoMnemonics=TRUE
 ShortcutsNoHelpkey=TRUE
 ShortcutsNoMenukey=TRUE
+
 ColorCursor=#282828
 ColorForeground=#000000000000
 ColorBackground=#f2f2eeeedede
