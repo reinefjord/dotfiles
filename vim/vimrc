@@ -1,43 +1,29 @@
 " Plugin configuration before loading
 let g:neomake_python_python_exe = 'python3'
 
-" gruvbox
-let g:gruvbox_contrast_light='hard'
-let g:gruvbox_italic=1
-
 " Load plugins
 call plug#begin('~/.vim/plugged')
+    " Languages
+    Plug 'lepture/vim-jinja'
+    Plug 'hail2u/vim-css3-syntax'
+    Plug 'lervag/vimtex'
+    Plug 'Vimjas/vim-python-pep8-indent'
+    Plug 'andys8/vim-elm-syntax'
+    Plug 'aklt/plantuml-syntax'
 
-" Colorschemes
-Plug 'w0ng/vim-hybrid'
-Plug 'nanotech/jellybeans.vim'
-Plug 'gruvbox-community/gruvbox'
-Plug 'arzg/vim-corvine'
-Plug 'owickstrom/vim-colors-paramount'
-Plug 'YorickPeterse/vim-paper'
+    "" Motions
+    Plug 'justinmk/vim-sneak'
 
-" Languages
-Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'lervag/vimtex'
-Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'andys8/vim-elm-syntax'
+    " Make/linting
+    Plug 'neomake/neomake'
 
-"" Motions
-Plug 'justinmk/vim-sneak'
-
-" Make/linting
-Plug 'neomake/neomake'
-
-" Other
-Plug 'farmergreg/vim-lastplace'
-Plug 'tpope/vim-sleuth'
-
+    " Other
+    Plug 'farmergreg/vim-lastplace'
+    Plug 'tpope/vim-sleuth'
 call plug#end()
 
 " neomake
 call neomake#configure#automake('nrw', 500)
-
 
 " key bindings
 let mapleader = ' '
@@ -96,6 +82,6 @@ set hidden
 set undofile
 set undodir=~/.local/share/vim/undo  " not created automatically!
 set nojoinspaces  " only one space after punctuation
-set conceallevel=2  " conceal *text* _formatting_
+"set conceallevel=2  " conceal *text* _formatting_
 set ignorecase
 set smartcase
