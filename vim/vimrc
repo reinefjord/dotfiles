@@ -4,12 +4,13 @@ let g:neomake_python_python_exe = 'python3'
 " Load plugins
 call plug#begin('~/.vim/plugged')
     " Languages
-    Plug 'lepture/vim-jinja'
+    Plug 'Glench/Vim-Jinja2-Syntax'
     Plug 'hail2u/vim-css3-syntax'
     Plug 'lervag/vimtex'
     Plug 'Vimjas/vim-python-pep8-indent'
     Plug 'andys8/vim-elm-syntax'
     Plug 'aklt/plantuml-syntax'
+    Plug 'zah/nim.vim'
 
     "" Motions
     Plug 'justinmk/vim-sneak'
@@ -29,12 +30,13 @@ call neomake#configure#automake('nrw', 500)
 let mapleader = ' '
 nnoremap <Leader>h :set hlsearch!<CR>
 nnoremap <Leader>r :set relativenumber!<CR>
+nnoremap <Leader>n :set number!<CR>
 nnoremap <tab> :bn<CR>
 nnoremap <S-tab> :bp<CR>
 nmap <Leader>o o<Esc>k
 nmap <Leader>O O<Esc>j
-nmap <Leader>n :NeomakeDisableBuffer<Bar>:NeomakeClean<CR>
-nmap <Leader>N :NeomakeEnableBuffer<Bar>:Neomake<CR>
+nmap <Leader>m :NeomakeDisableBuffer<Bar>:NeomakeClean<CR>
+nmap <Leader>M :NeomakeEnableBuffer<Bar>:Neomake<CR>
 nmap <Leader>W :%s/\s\+$\<Bar> \+\ze\t//g<CR>
 
 function! SynStack ()
@@ -48,7 +50,7 @@ endfunction
 map <F2> :call SynStack()<CR>
 
 " visuals
-set relativenumber
+"set relativenumber
 set number
 set ruler
 set list listchars=tab:>·,nbsp:⍽,trail:•
@@ -56,11 +58,13 @@ set cursorline
 set scrolloff=1  " show at least one line above/below cursor
 
 " color
+set termguicolors
+set t_8f=[38:2::%lu:%lu:%lum
+set t_8b=[48:2::%lu:%lu:%lum
 syntax on
 set colorcolumn=80
-set termguicolors
 set background=light
-colorscheme paper
+colorscheme paper2
 
 " tabs
 set breakindent "indent wrapped lines to line indent level
