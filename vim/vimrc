@@ -52,7 +52,7 @@ endfunction
 map <F2> :call SynStack()<CR>
 
 " visuals
-"set relativenumber
+set relativenumber
 set number
 set ruler
 set list listchars=tab:>·,nbsp:⍽,trail:•
