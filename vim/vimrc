@@ -39,6 +39,8 @@ nmap <Leader>m :NeomakeDisableBuffer<Bar>:NeomakeClean<CR>
 nmap <Leader>M :NeomakeEnableBuffer<Bar>:Neomake<CR>
 nmap <Leader>W :%s/\s\+$\<Bar> \+\ze\t//g<CR>
 
+command W :execute ':silent w !doas tee % > /dev/null' | :edit!
+
 function! SynStack ()
     for i1 in synstack(line("."), col("."))
         let i2 = synIDtrans(i1)
