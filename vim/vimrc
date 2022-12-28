@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'andys8/vim-elm-syntax'
     Plug 'aklt/plantuml-syntax'
     Plug 'zah/nim.vim'
+    Plug 'othree/html5.vim'
 
     "" Motions
     Plug 'justinmk/vim-sneak'
