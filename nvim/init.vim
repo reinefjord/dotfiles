@@ -1,0 +1,91 @@
+" Load plugins
+call plug#begin()
+    " Languages
+    Plug 'Glench/Vim-Jinja2-Syntax'
+    Plug 'hail2u/vim-css3-syntax'
+    Plug 'lervag/vimtex'
+    Plug 'Vimjas/vim-python-pep8-indent'
+    Plug 'andys8/vim-elm-syntax'
+    Plug 'aklt/plantuml-syntax'
+    Plug 'zah/nim.vim'
+    Plug 'terrastruct/d2-vim'
+
+    "" Motions
+    Plug 'justinmk/vim-sneak'
+
+    " Make/linting
+    Plug 'neomake/neomake'
+
+    " Other
+    Plug 'farmergreg/vim-lastplace'
+    Plug 'tpope/vim-sleuth'
+call plug#end()
+
+" neomake
+call neomake#configure#automake('nrw', 500)
+
+" key bindings
+let mapleader = ' '
+nnoremap <Leader>h :set hlsearch!<CR>
+nnoremap <Leader>r :set relativenumber!<CR>
+nnoremap <Leader>n :set number!<CR>
+nnoremap <tab> :bn<CR>
+nnoremap <S-tab> :bp<CR>
+nmap <Leader>o o<Esc>k
+nmap <Leader>O O<Esc>j
+nmap <Leader>m :NeomakeDisableBuffer<Bar>:NeomakeClean<CR>
+nmap <Leader>M :NeomakeEnableBuffer<Bar>:Neomake<CR>
+nmap <Leader>W :%s/\s\+$\<Bar> \+\ze\t//g<CR>
+
+command W :execute ':silent w !doas tee % > /dev/null' | :edit!
+
+function! SynStack ()
+    for i1 in synstack(line("."), col("."))
+        let i2 = synIDtrans(i1)
+        let n1 = synIDattr(i1, "name")
+        let n2 = synIDattr(i2, "name")
+        echo n1 "->" n2
+    endfor
+endfunction
+map <F2> :call SynStack()<CR>
+
+" visuals
+set relativenumber
+set number
+set ruler
+set list listchars=tab:>·,nbsp:⍽,trail:•
+set cursorline
+set scrolloff=1  " show at least one line above/below cursor
+
+" color
+set termguicolors
+set t_8f=[38:2::%lu:%lu:%lum
+set t_8b=[48:2::%lu:%lu:%lum
+syntax on
+set colorcolumn=80
+set background=light
+colorscheme paper
+
+" tabs
+set breakindent "indent wrapped lines to line indent level
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" tex
+let g:tex_flavor = "latex"
+
+" misc
+set grepprg=grep\ -nH\ $*
+set wildmode=longest,list  " bash-like tab completion
+set wildmenu
+set backspace=2
+set mouse=c
+au BufRead /tmp/mutt-* set tw=72
+set hidden
+set undofile
+"set undodir=~/.local/share/vim/undo  " not created automatically!
+set nojoinspaces  " only one space after punctuation
+"set conceallevel=2  " conceal *text* _formatting_
+set ignorecase
+set smartcase
