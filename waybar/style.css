@@ -1,0 +1,72 @@
+* {
+    border: none;
+    border-radius: 0;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Iosevka Fixed SS05, Noto Sans Mono, "Font Awesome 5 Free", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    min-height: 0;
+}
+
+.modules {
+    padding: 3px;
+}
+
+window#waybar {
+    background-color: #433633;
+    color: #ffffea;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#mode {
+    background-color: #64727D;
+    border-bottom: 3px solid #ffffff;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    /*
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    */
+}
+
+.module {
+    padding: 0 5px;
+}
+
+.modules-left:first-child {
+    padding-left: 5px;
+}
+
+.modules-right:last-child {
+    padding-right: 5px;
+}
+
+#workspaces button {
+    color: #ffffea;
+    padding: 0 10px;
+}
+
+#workspaces button.focused {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#workspaces button:hover {
+    background: #ffffea;
+    color: #433633;
+    transition: none;
+}
