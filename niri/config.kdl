@@ -198,3 +198,25 @@ window-rule {
     match app-id=r#"^foot"#
     default-column-width { proportion 0.33333; }
 }
+
+window-rule {
+    match app-id="org.telegram.desktop"
+    default-column-width { proportion 0.33333; }
+}
+
+window-rule {
+    match app-id="Slack"
+    default-column-width { proportion 0.33333; }
+}
+
+window-rule {
+    match app-id="net.thunderbird.Thunderbird" title="Reminder"
+    open-floating true
+}
+
+// Block out mako notifications from screencasts.
+layer-rule {
+    match namespace="^notifications$"
+    block-out-from "screencast"
+}
+
